@@ -54,12 +54,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cyh-Qf-Hm8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30q-Em-2kL">
                                 <rect key="frame" x="216" y="222" width="143" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jv1-jP-FdT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Run name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVh-TI-clC">
                                 <rect key="frame" x="9" y="287" width="350" height="26"/>
@@ -89,6 +95,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="labelRunDistanceDisplay" destination="5PO-st-g1b" id="zAj-Bb-JRS"/>
+                        <outlet property="labelRunNameDisplay" destination="UVh-TI-clC" id="3W1-nY-pIc"/>
+                        <outlet property="labelRunTimeDisplay" destination="Z3i-Su-zCH" id="TUu-yc-bIX"/>
+                        <outlet property="pkrRunPicker" destination="b5I-g7-nRB" id="dT3-ZF-cJv"/>
+                        <outlet property="textfieldRunDistance" destination="67x-eM-VJD" id="AcF-vu-GhY"/>
+                        <outlet property="textfieldRunName" destination="HhJ-3e-zZU" id="tvK-78-q1o"/>
+                        <outlet property="textfieldRunTime" destination="DsQ-ZD-Ert" id="IjL-pS-hP6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

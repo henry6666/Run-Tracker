@@ -9,17 +9,32 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // IBOutlets
+    @IBOutlet weak var textfieldRunName: UITextField!
+    @IBOutlet weak var textfieldRunDistance: UITextField!
+    @IBOutlet weak var textfieldRunTime: UITextField!
+    @IBOutlet weak var labelRunNameDisplay: UILabel!
+    @IBOutlet weak var labelRunDistanceDisplay: UILabel!
+    @IBOutlet weak var labelRunTimeDisplay: UILabel!
+    @IBOutlet weak var pkrRunPicker: UIPickerView!
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func addButtonPressed(_ sender: UIButton) {
+        
     }
 
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        
+    }
 
 }
 
