@@ -20,6 +20,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var labelRunTimeDisplay: UILabel!
     @IBOutlet weak var pkrRunPicker: UIPickerView!
     
+    var listOfRuns = [Run]() // List of run objects
+    var listOfRunNames = [String]() // To populate the picker
+    var managedObjectContext: NSManagedObjectContext!
+    
+    
+    
     
     
     
@@ -32,6 +38,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         textfieldRunName.delegate = self
         textfieldRunDistance.delegate = self
         textfieldRunTime.delegate = self
+        
+        
+        let appDeletate = UIApplication.shared.delegate as! AppDelegate
+        managedObjectContext = appDeletate.persistentContainer.viewContext
+        
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -59,6 +71,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        
+    }
+    
+    func fetchRuns() {
         
     }
 

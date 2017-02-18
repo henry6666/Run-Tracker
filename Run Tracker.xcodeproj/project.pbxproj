@@ -13,6 +13,8 @@
 		BA5027561E5847F80099631B /* Run_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA5027541E5847F80099631B /* Run_Tracker.xcdatamodeld */; };
 		BA5027581E5847F80099631B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5027571E5847F80099631B /* Assets.xcassets */; };
 		BA50275B1E5847F80099631B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5027591E5847F80099631B /* LaunchScreen.storyboard */; };
+		BA5027641E58544E0099631B /* Run+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5027621E58544E0099631B /* Run+CoreDataClass.swift */; };
+		BA5027651E58544E0099631B /* Run+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5027631E58544E0099631B /* Run+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BA5027571E5847F80099631B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA50275A1E5847F80099631B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA50275C1E5847F80099631B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA5027621E58544E0099631B /* Run+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Run+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BA5027631E58544E0099631B /* Run+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Run+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		BA50274C1E5847F80099631B /* Run Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				BA5027621E58544E0099631B /* Run+CoreDataClass.swift */,
+				BA5027631E58544E0099631B /* Run+CoreDataProperties.swift */,
 				BA50274D1E5847F80099631B /* AppDelegate.swift */,
 				BA50274F1E5847F80099631B /* ViewController.swift */,
 				BA5027511E5847F80099631B /* Main.storyboard */,
@@ -142,7 +148,9 @@
 			files = (
 				BA5027561E5847F80099631B /* Run_Tracker.xcdatamodeld in Sources */,
 				BA5027501E5847F80099631B /* ViewController.swift in Sources */,
+				BA5027651E58544E0099631B /* Run+CoreDataProperties.swift in Sources */,
 				BA50274E1E5847F80099631B /* AppDelegate.swift in Sources */,
+				BA5027641E58544E0099631B /* Run+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
