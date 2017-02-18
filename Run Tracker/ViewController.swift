@@ -47,23 +47,49 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        <#code#>
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        <#code#>
+        return listOfRunNames.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        <#code#>
+        return listOfRunNames[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        <#code#>
+        
+        let chosenRunNames = listOfRunNames[row]
+    
+        for run in listOfRuns {
+            if run.runname == chosenRunNames {
+                let runPace = Double(run.runtime!)! / Double(run.rundistance!)! // minutes/kilometer
+                labelRunNameDisplay.text = "name: " + run.runname!
+                labelRunDistanceDisplay.text = "Distance: " + run.rundistance! + " km"
+                labelRunTimeDisplay.text = "Time: " + run.runtime! + " min (" + String(format: "%.2f", runPace) + "min/km"
+                // Time: 20 min (5.00 min/km)
+            }
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        <#code#>
+        
+        let allowCharacters = NSCharacterSet(charactersIn: "0123456789.")
+        
+        switch textField {
+        case textfieldRunTime, textfieldRunDistance:
+            if let _ = string.rangeOfCharacter(from: allowCharacters as CharacterSet) {
+            
+                return true
+            } else {
+                return false
+            }
+            
+        default:
+            return true
+        }
+        
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
