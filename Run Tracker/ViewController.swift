@@ -94,6 +94,37 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
         
+        if !listOfRunNames.contains(textfieldRunName.text!) && !(textfieldRunDistance.text?.isEmpty)! && !(textfieldRunTime.text?.isEmpty)! {
+        
+            let newRun = NSEntityDescription.insertNewObject(forEntityName: "Run", into: managedObjectContext) as! Run
+        
+            newRun.runname = textfieldRunName.text
+            newRun.rundistance = textfieldRunDistance.text
+            newRun.runtime = textfieldRunTime.text
+            
+            
+            do {
+                try managedObjectContext.save()
+                listOfRunNames.append(newRun.runname!)
+                listOfRuns.append(newRun)
+                
+                
+                
+            } catch {
+                print("Run could not be saved!")
+            }
+            
+            self.pkrRunPicker.reloadAllComponents()
+
+            
+        }
+        
+        textfieldRunName.text?.removeAll()
+        textfieldRunDistance.text?.removeAll()
+        textfieldRunTime.text?.removeAll()
+
+        
+        
     }
 
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
