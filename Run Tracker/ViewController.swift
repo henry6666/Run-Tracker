@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     // IBOutlets
     @IBOutlet weak var textfieldRunName: UITextField!
@@ -25,7 +26,32 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        pkrRunPicker.delegate = self
+        pkrRunPicker.dataSource = self
+        textfieldRunName.delegate = self
+        textfieldRunDistance.delegate = self
+        textfieldRunTime.delegate = self
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        <#code#>
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        <#code#>
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        <#code#>
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        <#code#>
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        <#code#>
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
@@ -37,4 +63,16 @@ class ViewController: UIViewController {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
