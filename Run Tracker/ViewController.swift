@@ -43,6 +43,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let appDeletate = UIApplication.shared.delegate as! AppDelegate
         managedObjectContext = appDeletate.persistentContainer.viewContext
         
+        fetchRuns()
+        
         
     }
     
@@ -76,6 +78,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let allowCharacters = NSCharacterSet(charactersIn: "0123456789.")
+        
+        if string.isEmpty {
+            return true
+        }
+        
         
         switch textField {
         case textfieldRunTime, textfieldRunDistance:
@@ -129,10 +136,42 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
         
+        let runToDeleteName = pickerView(pkrRunPicker, titleForRow: pkrRunPicker.selectedRow(inComponent: 0), forComponent: 0)
+        
+        for run in listOfRuns {
+            if run.runname == runToDeleteName {
+                managedObjectContext.delete(run)
+                listOfRuns.removeAll()
+                listOfRunNames.removeAll()
+                
+            }
+        }
+        
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("Run could not be deleted")
+        }
+        
+        fetchRuns()
+        self.pkrRunPicker.reloadAllComponents()
+    
     }
     
     func fetchRuns() {
         
+        let fetchRequest : NSFetchRequest<Run> = Run.fetchRequest()
+        
+        do {
+            listOfRuns = try managedObjectContext.fetch(fetchRequest)
+            
+            for run in listOfRuns {
+                let runName = run.runname
+                listOfRunNames.append(runName!)
+            }
+        }catch {
+            print("Runs could not be fetched")
+        }
     }
 
 }
